@@ -1,12 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    
+
+    <div class="scroll-container">
+        <div class="scroll-text">
+            <!-- Your text content goes here -->
+        </div>
+    </div>
+
+
+
+
+
+
+    <script>
+
+        const scrollContainer = document.querySelector('.scroll-container');
+        const scrollText = document.querySelector('.scroll-text');
+
+        scrollContainer.addEventListener('scroll', () => {
+            const scrollY = scrollContainer.scrollTop;
+            const containerHeight = scrollContainer.clientHeight;
+            const textHeight = scrollText.clientHeight;
+
+            const maxScroll = textHeight - containerHeight;
+            const scrollPercent = (scrollY / maxScroll) * 100;
+
+            const textPosition = -(textHeight - containerHeight) * (scrollPercent / 100);
+            scrollText.style.top = `${textPosition}px`;
+        });
+This JavaScript code listens for the scroll event on the scroll container.It calculates the current scroll position, maps it to a percentage, and then adjusts the position of the text element accordingly.As you scroll down, the text will appear from the bottom of the container.
+
+Make sure to place the CSS and JavaScript files in the same directory as your HTML file.This is a basic implementation, and you can further customize the styling and behavior to match your requirements.
+
+
+
+
+
+
+
+    </script>
+
 </body>
+
 </html>
