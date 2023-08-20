@@ -251,7 +251,7 @@
         scrollContainer.addEventListener('scroll', () => {
             const scrollY = scrollContainer.scrollTop;
             const containerHeight = scrollContainer.clientHeight;
-            const textHeight = scrollText.clientHeight;
+            const textHeight = scrollText.clientHeight; 
 
             const maxScroll = textHeight - containerHeight;
             const scrollPercent = (scrollY / maxScroll) * 100;
